@@ -241,7 +241,6 @@ NoConn ~ 7500 1900
 NoConn ~ 7500 1800
 NoConn ~ 7500 1700
 NoConn ~ 7500 1600
-NoConn ~ 7500 1400
 NoConn ~ 7500 1300
 NoConn ~ 7500 1200
 NoConn ~ 7500 1100
@@ -426,12 +425,10 @@ Wire Wire Line
 Wire Wire Line
 	6900 4500 6900 4800
 Wire Wire Line
-	8100 4650 6900 4650
+	6900 4650 8100 4650
 Connection ~ 6900 4650
 Wire Wire Line
 	7000 2700 6650 2700
-Wire Wire Line
-	7000 2900 6650 2900
 Wire Wire Line
 	7500 2700 7750 2700
 Wire Wire Line
@@ -601,12 +598,12 @@ $EndComp
 $Comp
 L SW_Push_Dual button_2
 U 1 1 5A1B7600
-P 3050 900
-F 0 "button_2" H 3100 1000 50  0000 L CNN
-F 1 "SW_Push_Dual" H 3050 630 50  0000 C CNN
-F 2 "Buttons_Switches_THT:Push_E-Switch_KS01Q01" H 3050 1100 50  0001 C CNN
-F 3 "" H 3050 1100 50  0001 C CNN
-	1    3050 900 
+P 2900 1900
+F 0 "button_2" H 2950 2000 50  0000 L CNN
+F 1 "SW_Push_Dual" H 2900 1630 50  0000 C CNN
+F 2 "Buttons_Switches_THT:Push_E-Switch_KS01Q01" H 2900 2100 50  0001 C CNN
+F 3 "" H 2900 2100 50  0001 C CNN
+	1    2900 1900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -614,9 +611,7 @@ Wire Wire Line
 Wire Wire Line
 	6000 1000 6000 1200
 Wire Wire Line
-	3250 900  3250 1100
-Wire Wire Line
-	2850 900  2850 1100
+	3100 1900 3100 2100
 Text Label 4250 1600 2    60   ~ 0
 gnd
 Text Label 4250 1200 2    60   ~ 0
@@ -634,7 +629,7 @@ L R R2
 U 1 1 5A1B7F49
 P 4400 850
 F 0 "R2" V 4480 850 50  0000 C CNN
-F 1 "120" V 4400 850 50  0000 C CNN
+F 1 "200" V 4400 850 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4330 850 50  0001 C CNN
 F 3 "" H 4400 850 50  0001 C CNN
 	1    4400 850 
@@ -645,7 +640,7 @@ L R R3
 U 1 1 5A1B7FA1
 P 4400 1200
 F 0 "R3" V 4480 1200 50  0000 C CNN
-F 1 "120" V 4400 1200 50  0000 C CNN
+F 1 "200" V 4400 1200 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4330 1200 50  0001 C CNN
 F 3 "" H 4400 1200 50  0001 C CNN
 	1    4400 1200
@@ -656,7 +651,7 @@ L R R4
 U 1 1 5A1B803B
 P 4400 1600
 F 0 "R4" V 4480 1600 50  0000 C CNN
-F 1 "120" V 4400 1600 50  0000 C CNN
+F 1 "200" V 4400 1600 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4330 1600 50  0001 C CNN
 F 3 "" H 4400 1600 50  0001 C CNN
 	1    4400 1600
@@ -678,43 +673,113 @@ Text Label 7500 2200 0    60   ~ 0
 button
 Text Label 6000 1100 2    60   ~ 0
 gnd
-Text Label 2350 1650 3    60   ~ 0
+Text Label 2350 1250 1    60   ~ 0
 gnd
+Text Label 7500 1500 0    60   ~ 0
+start_inhibit
+Text Label 1650 1450 2    60   ~ 0
+start_inhibit
+Text Label 3100 2000 0    60   ~ 0
+SCL
+Text Label 8450 2500 0    60   ~ 0
+gnd
+Wire Wire Line
+	7500 2500 8450 2500
 $Comp
-L Q_NPN_EBC npn1
-U 1 1 5A1B9577
+L Q_PNP_EBC PNP1
+U 1 1 5A1CF0C8
 P 2250 1450
-F 0 "npn1" H 2450 1500 50  0000 L CNN
-F 1 "Q_NPN_EBC" H 2450 1400 50  0000 L CNN
+F 0 "PNP1" H 2450 1500 50  0000 L CNN
+F 1 "Q_PNP_EBC" H 2450 1400 50  0000 L CNN
 F 2 "TO_SOT_Packages_THT:TO-92_Inline_Narrow_Oval" H 2450 1550 50  0001 C CNN
 F 3 "" H 2250 1450 50  0001 C CNN
 	1    2250 1450
 	1    0    0    -1  
 $EndComp
-Text Label 7500 1500 0    60   ~ 0
-restart
-Text Label 2050 1450 2    60   ~ 0
-restart
-Wire Wire Line
-	2850 1000 2350 1000
-Wire Wire Line
-	2350 1000 2350 1250
-Connection ~ 2850 1000
-Text Label 3250 1000 0    60   ~ 0
-SCL
-Text Label 8450 2500 0    60   ~ 0
-gnd
 $Comp
-L GND #PWR?
-U 1 1 5A1BA8B2
-P 8450 2500
-F 0 "#PWR?" H 8450 2250 50  0001 C CNN
-F 1 "GND" H 8450 2350 50  0000 C CNN
-F 2 "" H 8450 2500 50  0001 C CNN
-F 3 "" H 8450 2500 50  0001 C CNN
-	1    8450 2500
+L R R6
+U 1 1 5A1CF188
+P 1900 1750
+F 0 "R6" V 1980 1750 50  0000 C CNN
+F 1 "1K" V 1900 1750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1830 1750 50  0001 C CNN
+F 3 "" H 1900 1750 50  0001 C CNN
+	1    1900 1750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7500 2500 8450 2500
+	1650 1450 2050 1450
+Wire Wire Line
+	1900 1600 1900 1450
+Connection ~ 1900 1450
+Text Label 1900 2050 0    60   ~ 0
+gnd
+Wire Wire Line
+	1900 1900 1900 2050
+$Comp
+L C C2
+U 1 1 5A1D4EFC
+P 3200 2850
+F 0 "C2" H 3225 2950 50  0000 L CNN
+F 1 "0.1 uF" H 3225 2750 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3238 2700 50  0001 C CNN
+F 3 "" H 3200 2850 50  0001 C CNN
+	1    3200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1
+U 1 1 5A1D531C
+P 5300 2850
+F 0 "C1" H 5325 2950 50  0000 L CNN
+F 1 "0.1uF" H 5325 2750 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5338 2700 50  0001 C CNN
+F 3 "" H 5300 2850 50  0001 C CNN
+	1    5300 2850
+	1    0    0    -1  
+$EndComp
+Text Label 5300 2700 1    60   ~ 0
+gnd
+Text Label 3200 2700 1    60   ~ 0
+gnd
+Wire Wire Line
+	2350 1650 2350 1900
+Wire Wire Line
+	2350 1900 2700 1900
+Wire Wire Line
+	2700 1900 2700 2100
+Wire Wire Line
+	7000 2900 6650 2900
+Text Label 7500 1400 0    60   ~ 0
+led_4
+$Comp
+L LED LED4
+U 1 1 5A1FD2A3
+P 5000 2000
+F 0 "LED4" H 5000 2100 50  0000 C CNN
+F 1 "LED" H 5000 1900 50  0000 C CNN
+F 2 "LEDs:LED_D5.0mm" H 5000 2000 50  0001 C CNN
+F 3 "" H 5000 2000 50  0001 C CNN
+	1    5000 2000
+	1    0    0    -1  
+$EndComp
+Text Label 4250 2000 2    60   ~ 0
+gnd
+$Comp
+L R R5
+U 1 1 5A1FD2AB
+P 4400 2000
+F 0 "R5" V 4480 2000 50  0000 C CNN
+F 1 "200" V 4400 2000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4330 2000 50  0001 C CNN
+F 3 "" H 4400 2000 50  0001 C CNN
+	1    4400 2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4550 2000 4850 2000
+Text Label 5150 2000 0    60   ~ 0
+led_4
+Connection ~ 5300 3000
+Connection ~ 3200 3000
 $EndSCHEMATC
